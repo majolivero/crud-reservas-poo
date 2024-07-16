@@ -6,11 +6,21 @@ class Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
     
+    //Para administrador
     crearUsuario(){
 
     }
 
-    registrarse(){
+    registrarse(usuarioRegular){
+        let jsonUsuarioRegular = {
+            nombre: usuarioRegular.nombre,
+            apellido: usuarioRegular.apellido,
+            email: usuarioRegular.fechaNacimiento,
+            contraseña: usuarioRegular.contraseña
+        }
+
+        //Voy en este punto
+        localStorage.setItem('user' , JSON.stringify(user));
 
     }
 
@@ -21,9 +31,10 @@ class Persona {
 
 
 class UsuarioRegular extends Persona {
-    constructor(nombre, apellido, email, fechaNacimiento,idUsuario) {
+    constructor(nombre, apellido, email, fechaNacimiento,contraseña,idUsuario) {
         super(nombre,apellido,email,fechaNacimiento);
         this.idUsuario = idUsuario;
+        this.contraseña = contraseña;
     }
 
     registrarse(){
@@ -37,9 +48,10 @@ class UsuarioRegular extends Persona {
 
 
 class Administrador extends Persona {
-    constructor(nombre,apellido,email,fechaNacimiento,idAdministrador){
+    constructor(nombre,apellido,email,fechaNacimiento,contraseña,idAdministrador){
         super(nombre,apellido,email,fechaNacimiento);
         this.idAdministrador = idAdministrador;
+        this.contraseña = contraseña;
     }
 
     crearAdmin(){
@@ -58,3 +70,7 @@ class Administrador extends Persona {
 
     }
 }
+
+
+export { Persona, UsuarioRegular, Administrador };
+
