@@ -1,0 +1,30 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+body{
+    height: 100vh;
+    text-align: center;
+}
+
+.centrar-flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedor{
+    flex-direction: column;
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+}
+
+label{
+    margin-top: 20px;
+}
+
+#botonCrearCuenta{
+    margin-top:20px;
+}
