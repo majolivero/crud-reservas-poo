@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer type="module"></script>
+    <title>Crear Reserva</title>
+</head>
+<body class="centrar-flex">
+    <button id="cerrarSesionBtn">Cerrar sesión</button>
+
+    <div class="centrar-flex" id="contenedor">
+        <h1>Crear Reserva</h1>
+        <div id="adminOptions" style="display:none;">            
+            <label for="usuarioSelect">Seleccionar Usuario:</label>
+            <select id="usuarioSelect">
+                <option value="">Seleccione un usuario</option>
+            </select>
+        </div>
+        <label>Fecha de Reserva:</label>
+        <input type="date" id="reservaFecha">
+        <button id="crearReservaBtn">Crear Reserva</button>
+        <h2>Reservas:</h2>
+        <ul id="reservasLista"></ul>
+    </div>
+
+    <button id="crearUsuarioBtn" style="display:none;">Crear Usuario Regular</button>
+</body>
+</html>

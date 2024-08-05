@@ -1,25 +1,18 @@
-import { Persona, UsuarioRegular, Administrador} from '../app.js';
+import { UsuarioRegular, Administrador } from '../app.js';
 
-const inputNombre = document.getElementById('inputNombre');
-const inputApellido = document.getElementById('inputApellido');
-const inputEmail = document.getElementById('inputEmail');
-const inputFechaNacimiento = document.getElementById('fechaNacimiento');
-const inputContraseña = document.getElementById('inputContraseña');
-const botonCrearCuenta = document.getElementById('botonCrearCuenta');
+document.getElementById('botonCrearCuenta').addEventListener('click', createUser);
 
-botonCrearCuenta.addEventListener('click', (e) => {
-    const valorNombre = inputNombre.value();
-    const valorApellido = inputApellido.value();
-    const valorEmail = inputEmail.value();
-    const valorFechaNacimiento = inputFechaNacimiento.value();
-    const valorContraseña = inputContraseña.value();
+function createUser(event) {
+    event.preventDefault();
+    const nombre = document.getElementById('inputNombre').value;
+    const apellido = document.getElementById('inputApellido').value;
+    const email = document.getElementById('inputEmail').value;
+    const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+    const contraseña = document.getElementById('inputContraseña').value;
 
-    if(valorNombre == '' || valorApellido == '' || valorEmail == '' || valorFechaNacimiento == '' || valorContraseña == ''){
-        alert("Todos los campos son requeridos");
-    }
-    else{
-        
-    }
-
-
-})
+    const newUser = new UsuarioRegular('', nombre, apellido, email, fechaNacimiento, contraseña);
+    newUser.registrarse();
+    alert('Usuario creado exitosamente!');
+    window.location.href = '../crearReserva/index.html';
+    // Optionally redirect or clear form
+}
